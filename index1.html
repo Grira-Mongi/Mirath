@@ -3,47 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>أصحاب الفروض من الرجال والنساء</title>
+<meta name="color-scheme" content="light">
+<title>أصحاب الفروض من الرجال و النساء</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f8fc;--fg:#1b2430;--card:#fff;--line:#9db4d8;--blue:#b8dcff;--blue2:#4a90e2;--ph:#c9ccd1;--accent:#8b1e2d;--mut:#667085;--nav:#1f3a5f}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151c;--fg:#e8ecf2;--card:#1a212c;--line:#3b5b8c;--blue:#24466f;--blue2:#7db5f5;--ph:#3a414c;--accent:#ff8a98;--mut:#9aa4b2;--nav:#2a4a78}}
-:root[data-theme="dark"]{--bg:#10151c;--fg:#e8ecf2;--card:#1a212c;--line:#3b5b8c;--blue:#24466f;--blue2:#7db5f5;--ph:#3a414c;--accent:#ff8a98;--mut:#9aa4b2;--nav:#2a4a78}
+:root{color-scheme:light;--bg:#fbf6ea;--paper:#fffdf7;--ink:#33403d;--mut:#6f7a74;--green:#2f7d6b;--green2:#e2f0e8;--gold:#b8923a;--gold2:#e6d6a4;--sky:#8bbfd0;--sky2:#e3f1f6;--amb:#fbebc9;--ambd:#d9a441;--rose:#f8e2de;--rosed:#d98c84}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0}
 html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);scroll-padding-top:env(safe-area-inset-top,0px)}
-body{background:var(--bg);color:var(--fg);font-family:"Segoe UI","Noto Naskh Arabic",Tahoma,Arial,sans-serif;line-height:1.7;min-height:100vh}
-#app{max-width:560px;margin:auto;padding:14px 14px 40px;text-align:center}
-h1{font-size:1.25rem;color:var(--accent);margin:8px 0 18px}
-h2{font-size:1.05rem;margin:6px 0 14px}
-.back{display:block;text-align:right;background:none;border:0;color:var(--blue2);font:inherit;font-size:.95rem;padding:4px 0;cursor:pointer}
-.big{display:block;width:100%;margin:12px 0;padding:18px 10px;font:inherit;font-size:1.15rem;font-weight:700;color:var(--fg);background:var(--card);border:2px solid var(--line);border-radius:16px;cursor:pointer}
+body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='none' stroke='%23b8923a' stroke-opacity='.13'%3E%3Crect x='17' y='17' width='30' height='30'/%3E%3Crect x='17' y='17' width='30' height='30' transform='rotate(45 32 32)'/%3E%3C/g%3E%3C/svg%3E");color:var(--ink);font-family:"Noto Naskh Arabic","Amiri",Tahoma,serif;line-height:1.8;min-height:100vh}
+#app{max-width:560px;margin:10px auto 0;padding:16px 14px 26px;text-align:center}
+.bsm{font-family:"Amiri",serif;color:var(--gold);font-size:1.25rem;margin:2px 0}
+h1{font-family:"Amiri",serif;font-size:1.55rem;color:var(--green);margin:2px 0 4px}
+h2{font-family:"Amiri",serif;font-size:1.3rem;color:var(--green);margin:4px 0 6px}
+.orn{color:var(--gold);letter-spacing:.5em;font-size:.9rem;margin:2px 0 14px}
+.orn:before,.orn:after{content:"";display:inline-block;width:60px;height:1px;background:var(--gold2);vertical-align:middle;margin:0 8px}
+.back{display:block;text-align:right;background:none;border:0;color:var(--green);font:inherit;font-weight:700;padding:2px 0;cursor:pointer}
+.big{display:flex;align-items:center;gap:14px;width:100%;margin:14px 0;padding:12px 16px;font:700 1.2rem "Amiri",serif;color:var(--ink);background:var(--paper);border:2px solid var(--gold2);border-radius:22px 22px 14px 14px;box-shadow:0 3px 10px rgba(120,100,50,.12);cursor:pointer;text-align:right}
+.big svg{flex:none;width:64px;height:64px}
+.big small{display:block;font:400 .85rem "Noto Naskh Arabic",serif;color:var(--mut)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ic{display:flex;flex-direction:column;align-items:center;background:var(--paper);border:2px solid var(--gold2);border-radius:26px 26px 14px 14px;padding:10px 6px 8px;font:inherit;color:var(--ink);cursor:pointer;box-shadow:0 3px 10px rgba(120,100,50,.12)}
+.ic svg{width:92px;height:92px}
+.ic .t{font:700 1rem "Amiri",serif;margin-top:4px;line-height:1.4}
 .big:active,.ic:active,.num:active,.dq:active{transform:scale(.97)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.ic{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:12px 6px;font:inherit;color:var(--fg);cursor:pointer}
-.ic .e{font-size:2.6rem;line-height:1.2;display:block}
-.ic .t{font-weight:700;font-size:.95rem}
-.ph{width:130px;height:130px;margin:6px auto 14px;background:var(--ph);border-radius:20px;border:2px solid var(--mut);display:flex;align-items:center;justify-content:center;font-size:3.6rem}
-.nm{display:inline-block;min-width:150px;padding:4px 18px;background:var(--card);border:1.5px solid var(--fg);font-size:.95rem}
-.cnt{margin:18px 0;padding:14px 8px;background:var(--card);border:2.5px solid var(--fg);font-size:1.4rem;font-weight:700}
-.nums{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:14px}
-.num{width:62px;height:62px;border-radius:50%;background:var(--blue);border:3px solid var(--blue2);font:700 1.5rem/1 Arial,Helvetica,sans-serif;color:var(--fg);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:2px 0 0;margin:0;flex:none}
-.num.big1{width:78px;height:78px;font-size:1.9rem;cursor:default;margin:12px auto}
-.row{display:flex;align-items:center;gap:10px;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:10px;margin:14px 0;text-align:right}
-.row .num{width:40px;height:40px;font-size:1.15rem;cursor:default;border-width:2px}
-.row .f{flex:none;min-width:70px;align-self:stretch;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);border-inline:1px solid var(--line);padding:0 8px}
-.row .w{flex:1;font-size:.95rem}
-.fw{display:inline-flex;align-items:center;gap:5px}.fs{font-size:.8rem;white-space:nowrap}.fr{display:inline-flex;flex-direction:column;align-items:center;font:700 1.15rem/1.25 Arial,sans-serif;direction:ltr}.fr b{display:block;min-width:1.4em;text-align:center;font-weight:700}
-.fr b:first-child{border-bottom:2px solid var(--accent)}
-.ft{font-size:1.05rem}
-.dq{display:inline-block;margin-top:10px;padding:9px 16px;font:inherit;font-size:.95rem;color:var(--blue2);background:none;border:1.5px dashed var(--blue2);border-radius:12px;cursor:pointer}
-.dl{margin-top:14px;padding:12px;border:1.5px solid var(--line);border-radius:12px;background:var(--card)}
-.dl .a{font-size:1.1rem;line-height:2;margin-top:10px}.dl .a:first-of-type{margin-top:0}.dl .s{border-bottom:1px dashed var(--line);padding-bottom:8px}.dl .s:last-child{border:0;padding:0}
-.dl .s{color:var(--mut);font-size:.82rem;margin-top:4px}
-.dl .l{color:var(--accent);font-size:.85rem;margin-bottom:4px}
+.ph{width:150px;height:150px;margin:4px auto 6px}.ph svg{width:100%;height:100%;filter:drop-shadow(0 3px 5px rgba(120,100,50,.25))}
+.nm{display:inline-block;min-width:170px;padding:3px 20px;background:var(--paper);border:2px solid var(--gold);border-radius:12px;font:700 1.15rem "Amiri",serif;color:var(--green)}
+.sb{margin:8px 0 0;font-size:.92rem;color:var(--mut)}
+.cnt{margin:14px 0;padding:10px 8px;background:var(--green2);border:2px solid var(--green);border-radius:14px;font:700 1.35rem "Amiri",serif;color:var(--green)}
+.nums{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:12px}
+.num{width:60px;height:60px;border-radius:50%;font:700 1.5rem/1 Arial,Helvetica,sans-serif;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:2px 0 0;margin:0;flex:none;background:var(--green2);border:3px solid var(--green)}
+.num.ka{background:var(--amb);border-color:var(--ambd)}.num.kh{background:var(--rose);border-color:var(--rosed)}
+.num.big1{width:78px;height:78px;font-size:1.9rem;cursor:default;margin:10px auto}
+.lg{display:flex;justify-content:center;gap:10px;margin-top:14px;font-size:.82rem}
+.lg span{padding:0 10px;border-radius:12px;border:1.5px solid var(--green);background:var(--green2)}
+.lg .ka{background:var(--amb);border-color:var(--ambd)}.lg .kh{background:var(--rose);border-color:var(--rosed)}
+.row{display:flex;align-items:center;gap:10px;border:2px solid var(--green);background:var(--green2);border-radius:16px;padding:10px;margin:12px 0;text-align:right}
+.row.ka{background:var(--amb);border-color:var(--ambd)}.row.kh{background:var(--rose);border-color:var(--rosed)}
+.row .num{width:40px;height:40px;font-size:1.15rem;cursor:default;border-width:2px;background:var(--paper)}
+.row .f{flex:none;min-width:72px;align-self:stretch;display:flex;align-items:center;justify-content:center;font-weight:700;color:#7a5a12;border-inline:1px solid rgba(0,0,0,.15);padding:0 8px;text-align:center}
+.row .w{flex:1;font-size:1.05rem;font-weight:600}
+.fw{display:inline-flex;align-items:center;gap:5px}.fs{font-size:.8rem;white-space:normal;max-width:110px;line-height:1.3}
+.fr{display:inline-flex;flex-direction:column;align-items:center;font:700 1.2rem/1.25 Arial,sans-serif;direction:ltr}.fr b{display:block;min-width:1.4em;text-align:center}.fr b:first-child{border-bottom:2px solid #7a5a12}
+.ft{font:700 1.3rem "Amiri",serif}
+.dq{display:inline-block;margin-top:8px;padding:9px 18px;font:700 1rem "Amiri",serif;color:var(--green);background:var(--paper);border:2px solid var(--green);border-radius:22px;cursor:pointer}
+.dl{margin-top:16px;padding:20px 16px 14px;border:2.5px solid var(--gold);border-radius:44px 44px 16px 16px;background:var(--paper);box-shadow:0 3px 10px rgba(120,100,50,.12)}
+.dl .l{font:700 1.05rem "Amiri",serif;color:var(--gold);margin-bottom:6px}
+.dl .a{font:400 1.2rem/2.05 "Amiri","Noto Naskh Arabic",serif;text-align:right;color:var(--ink)}.dl .a p{margin:0 0 8px}.dl .a p:last-child{margin:0}
+.bk{display:inline-block;width:4em}
 .nv{display:flex;gap:8px;justify-content:center;margin-top:16px}
-.nv button{font:inherit;padding:6px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
-.dl .a{font-size:1rem;line-height:1.9;text-align:right;font-weight:600}.dl .a p{margin:0 0 8px}.dl .a p:last-child{margin:0}.bk{display:inline-block;width:4em}.sig{max-width:560px;margin:8px auto 0;padding:12px 14px calc(18px + env(safe-area-inset-bottom,0px));text-align:center;font-weight:700;font-size:.95rem;color:var(--accent);border-top:1px solid var(--line)}.row .f{flex-wrap:wrap;text-align:center}.ft{font-size:.9rem;text-align:center;line-height:1.4}.nm{max-width:100%}.ic .t{display:block;margin-top:2px}
-.sb{margin:8px 0 0;font-size:.9rem;color:var(--mut)}.fs{white-space:normal;max-width:110px;text-align:center;line-height:1.3}
+.nv button{font:inherit;font-weight:700;padding:5px 14px;border-radius:12px;border:1.5px solid var(--gold2);background:var(--paper);color:var(--green);cursor:pointer}
+.sig{max-width:560px;margin:4px auto 0;padding:10px 14px calc(18px + env(safe-area-inset-bottom,0px));text-align:center;font:700 1.15rem "Amiri",serif;color:var(--green)}
+.sig:before{content:"✦ ✦ ✦";display:block;color:var(--gold);letter-spacing:.4em;font-size:.8rem}
 </style>
 </head>
 <body>
@@ -51,27 +62,62 @@ h2{font-size:1.05rem;margin:6px 0 14px}
 <div class="sig">محمد المنجي بن قريرة</div>
 <script>
 var G={"m": [{"n": "الأب", "e": "👨", "s": "له 3 حالات ميراث", "c": [["1/6", "مع الفرع الوارث المذكر \"الابن أو ابن الابن مهما نزل\".", "لقوله تعالى: ولأبويه لكل واحد منهما السدس مما ترك إن كان له ولد", ""], ["1/6 + ع", "مع الفرع الوارث المؤنث \"البنت أو بنت الابن مهما نزل أبوها\".", "ولأبويه لكل واحد منهما السدس مما ترك إن كان له ولد + حديث ابن عباس (الحقوا الفرائض بأهلها فما بقي فهو لأولى رجل ذكر )", ""], ["ع", "عند عدم وجود الفرع الوارث مطلقا.", "فإن لم يكن له ولد وورثه أبواه فلأمه الثلث (فالباقي للأب عُصْبَةٌ) +حديث ابن عباس", ""]]}, {"n": "الجد الصحيح", "e": "👴", "s": "له 5 حالات: 3 حالات ميراث وحالتي حجب", "c": [["1/6", "مع الفرع الوارث المذكر \"الابن أو ابن الابن مهما نزل\".", "<p>لخطاب الله عز وجل لنا في القرآن بابني آدم كما ورد قول سيدنا يوسف (واتبعت ملة آبائي إبراهيم و إسحاق ويعقوب)</p><p>لقوله تعالى: (ولأبويه لكل واحد منهما السدس مما ترك إن كان له ولد)</p>", ""], ["1/6 + ع", "مع الفرع الوارث المؤنث \"البنت أو بنت الابن مهما نزل أبوها\".", "<p>لخطاب الله عز وجل لنا في القرآن بابني آدم كما ورد قول سيدنا يوسف (واتبعت ملة آبائي إبراهيم و إسحاق ويعقوب)</p><p>لقوله تعالى: ولأبويه لكل واحد منهما السدس مما ترك  إن كان له ولد + حديث ابن عباس (الحقوا الفرائض بأهلها فما بقي فهو لأولى رجل ذكر)</p>", ""], ["ع", "عند عدم وجود الفرع الوارث مطلقا.", "<p>لخطاب الله عز وجل لنا في القرآن بابني آدم كما ورد قول سيدنا يوسف (واتبعت ملة آبائي إبراهيم و إسحاق ويعقوب)</p><p>ولأبويه لكل واحد منهما السدس مما ترك  إن كان له ولد و حديث ابن عباس (الحقوا الفرائض بأهلها فما بقي فهو لأولى رجل ذكر)</p>", ""], ["م", "يحجب بالأب", "القاعدة (من أدلى إلى الميت بواسطة حجبته)", "h"], ["م", "الجد القريب يحجب الجد البعيد", "القاعدة (من أدلى إلى الميت بواسطة حجبته)", "h"]]}, {"n": "الزوج", "e": "🤵", "s": "له حالتان ميراث", "c": [["1/2", "عند عدم وجود الفرع الوارث المطلق للزوجة.", "لقوله تعالى: (ولكم نصف ما ترك أزواجكم إن لم يكن لهن ولد", ""], ["1/4", "عند وجود الفرع الوارث المطلق للزوجة.", "فإن كان لهن ولد فلكم الربع مما تركن )", ""]]}, {"n": "الإخوة والأخوات لأم", "e": "🧑‍🤝‍🧑", "s": "الذكور والإناث لكل منهما 6 حالات: حالتي ميراث وأربع حالات حجب", "c": [["1/6", "إذا كان واحدا وغير محجوب.", "لقوله تعالى: (وإن كان رجل يورث كلالة أو امرأة وله أخ أو أخت فلكل واحد منهما السدس", ""], ["1/3", "يشتركون فيه يقسم بينهم بالسوية إذا كانوا جمعا وغير محجوبين.", "فإن كانوا أكثر من ذلك فهم شركاء في الثلث) والدليل على أن المقصود هنا أنهم الأخوة لأم ما وجده الصحابة مكتوباً في مصحف سعد بن أبي وقاص كما قرأ ابن مسعود (وله أخ أو أخت من أم )", ""], ["م", "يحجبون بالفرع الوارث المذكر \"الابن وابن الابن مهما نزل\".", "<p>معظم الصحابة فسروا الكلالة بأنها ( من لا ولد له ولا والد ) بهذه الحالة فقط يرث الأخوة لأم</p><p>أما بوجود( الأصل الوارث المذكر أو الفرع الوارث المذكر أو المؤنث ) فيحجبون</p>", "h"], ["م", "يحجبون بالفرع الوارث المؤنث \"البنت وبنت الابن مهما نزل ابوها\".", "<p>معظم الصحابة فسروا الكلالة بأنها ( من لا ولد له ولا والد ) بهذه الحالة فقط يرث الأخوة لأم</p><p>أما بوجود( الأصل الوارث المذكر أو الفرع الوارث المذكر أو المؤنث ) فيحجبون</p>", "h"], ["م", "يحجبون بالأب.", "<p>معظم الصحابة فسروا الكلالة بأنها ( من لا ولد له ولا والد ) بهذه الحالة فقط يرث الأخوة لأم</p><p>أما بوجود( الأصل الوارث المذكر أو الفرع الوارث المذكر أو المؤنث ) فيحجبون</p>", "h"], ["م", "يحجبون بالجد الصحيح أب الأب مهما علا", "<p>معظم الصحابة فسروا الكلالة بأنها ( من لا ولد له ولا والد ) بهذه الحالة فقط يرث الأخوة لأم</p><p>أما بوجود( الأصل الوارث المذكر أو الفرع الوارث المذكر أو المؤنث ) فيحجبون</p>", "h"]]}], "w": [{"n": "الأم", "e": "👩", "s": "لها 3 حالات ميراث", "c": [["1/6", "عند وجود الفرع الوارث المطلق أو عند تعدد الإخوة.", "لقوله تعالى: (ولأبويه لكل واحد منهما السدس ممّا ترك إن كان له ولد) (فإن كان له إخوة فلأمه السدس)", ""], ["1/3", "عند عدم وجود الفرع الوارث المطلق وعدم وجود تعدد من الإخوة.", "(فإن لم يكن له ولد وورثه أبواه فلأمه الثلث فإن كان له إخوة فلأمه السدس)", ""], ["1/3 الباقي (1/3 با)", "ثلث الباقي في المسألتين العمريتين مع الأب وأحد الزوجين.", "(فإن لم يكن له ولد وورثه أبواه فلأمه الثلث)القرآن منزه عن الزيادة فلو ذكر فإن لم يكن له ولد فلأمه الثلث لتم المعنى ولكن بذكر وورثه أبواه فالمقصود هنا ثلث ما ورث الأبوين هذا اجتهاد الصحابة", "", "1/3 الباقي"]]}, {"n": "الجدة الصحيحة", "e": "👵", "s": "لها 5 حالات ترث في واحدة وتحجب في 4", "c": [["1/6", "للواحدة منهن أو أكثر يشتركن فيه ما لم تكن محجوبة", "<p>1-لا يوجد نص في القرآن لميراث الجدة لكن ثبت ذلك في السنة بالإجماع منها ما أفتى به أبوبكر الصديق بعد استشارة أصحابه في ذلك فقال المغيرة بن شعبة أن الرسول صلى الله عليه وسلم أعطى للجدة السدس وأكد كلامه محمد بن مسلمة الأنصاري فأنفذ ذلك أبو بكر</p><p>2- وأن الرسول صلى الله عليه وسلم أطعم جدتين</p><p>3- وأن الرسول صلى الله عليه وسلم أطعم ثلاث جدات جدتين من قبل الأب وجدة من قبل الأم</p>", ""], ["م", "تحجب بالأم", "بالسبب (لأن ميراث الجدات بالأمومة)", "h"], ["م", "الأب يحجب أمه مهما علت.", "القاعدة (من أدلى إلى الميت بواسطة حجبته)", "h"], ["م", "أب الأب يحجب أمه مهما علت.", "القاعدة (من أدلى إلى الميت بواسطة حجبته)", "h"], ["م", "الجدة القريبة تحجب الجدة البعيدة.", "قاعدة القريب يحجب البعيد", "h"]]}, {"n": "الزوجة", "e": "👰", "s": "لها حالتي ميراث", "c": [["1/4", "عند عدم وجود الفرع الوارث المطلق للزوج", "لقوله تعالى: ولهن الربع مما تركتم إن لم يكن لكم ولد", ""], ["1/8", "عند وجود الفرع الوارث المطلق للزوج", ":فإن كان لكم ولد فلهن الثمن مما تركتم", ""]]}, {"n": "البنت الصلبية", "e": "👧", "s": "لها 3 حالات ميراث", "c": [["1/2", "إذا كانت واحدة وغير معصبة.", "(وإن كانت واحدة فلها النصف )", ""], ["2/3", "إذا كن أكثر من واحدة وغير معصبات.", "(فإن كن نساء فوق اثنتين فلهن ثلثا ما ترك)", ""], ["ع", "تكون عصبة بالغير مع الابن فأكثر للذكر مثل حظ الأنثيين.", "(يوصيكم الله في أولادكم للذكر مثل حظ الأنثيين)", ""]]}, {"n": "بنت الابن", "e": "🧒", "s": "لها عشر حالات ترث في 6 وتحجب في 4", "c": [["1/2", "إذا كانت واحدة وغير محجوبة ولا معصبة ولا مستحقة لفرض السدس.", "<p>الأدلة على ميراث بنت الابن: هي نفس أدلة البنت لأنها تنزل في منزلتها</p><p>لقوله تعالى: (يوصيكم الله في أولادكم للذكر مثل حظ الأنثيين فإن كن نساء فوق اثنتين فلهن ثلثا ما ترك وإن كانت واحدة فلها النصف )</p>", ""], ["2/3", "إذا كن أكثر من واحدة وغير محجوبات ولا معصبات ولا مستحقات لفرض السدس.", "<p>الأدلة على ميراث بنت الابن: هي نفس أدلة البنت لأنها تنزل في منزلتها</p><p>لقوله تعالى: (يوصيكم الله في أولادكم للذكر مثل حظ الأنثيين فإن كن نساء فوق اثنتين فلهن ثلثا ما ترك وإن كانت واحدة فلها النصف )</p>", ""], ["1/6", "مع البنت الصلبية المستحقة لفرض النصف تكملة للثلثين.", "أما دليل السدس هو ما قضى به ابن مسعود ( أقضي بما قضى به النبي صلى الله عليه وسلم : للبنت النصف ولبنت الابن السدس تكملة للثلثين وما بقي فللأخت )", ""], ["1/6", "مع بنت الابن الأعلى منها درجة المستحقة لفرض النصف تكملة للثلثين.", "أما دليل السدس هو ما قضى به ابن مسعود ( أقضي بما قضى به النبي صلى الله عليه وسلم : للبنت النصف ولبنت الابن السدس تكملة للثلثين وما بقي فللأخت )", ""], ["ع", "وتكون عصبة بالغير مع ابن الابن المساوي لها بالدرجة سواء كان أخوها أو ابن عمها.", "لقوله تعالى: يوصيكم الله في أولادكم للذكر مثل حظ الأنثيين", ""], ["ع", "وتكون عصبة بالغير مع ابن الابن الأنزل منها درجة إذا لم تكن صاحبة فرض.", "اجتهاد العلماء لأنه من غير المعقول أن ترث البعيدة وتسقط القريبة", ""], ["م", "الابن يحجب جميع بنات الابن.", "• وأما دليل الحجب (قواعد علم الميراث حجب الأقرب للأبعد ومن أدلى للميت بواسطة حجبته )", "h"], ["م", "ابن الابن يحجب جميع بنات الابن الأنزل منه درجة.", "• وأما دليل الحجب (قواعد علم الميراث حجب الأقرب للأبعد ومن أدلى للميت بواسطة حجبته )", "h"], ["م", "تسقط مع البنتين الصلبيتين فأكثر المستحقات لفرض الثلثين ما لم يكن هناك من يعصبها.", "• أما دليل السقوط قوله صلى الله عليه وسلم (لا يزيد حق البنات على الثلثين )", "h"], ["م", "تسقط مع بنتي الابن فأكثر الأعلى منها درجة المستحقات لفرض الثلثين ما لم يكن هناك من يعصبها.", "• أما دليل السقوط قوله صلى الله عليه وسلم (لا يزيد حق البنات على الثلثين )", "h"]]}, {"n": "الأخت الشقيقة", "e": "👩‍🦰", "s": "لها 6 حالات ترث في 4 وتحجب في 2", "c": [["1/2", "إذا كانت واحدة غير محجوبة ولا معصبة.", "لقوله تعالى: ( يستفتونك قل الله يفتيكم في الكلالة إن امرؤ هلك ليس له ولد وله أخت فلها نصف ما ترك", ""], ["2/3", "إذا كانت أكثر من واحدة وغير محجوبات ولا معصبات.", "لقوله تعالى: فإن كانتا اثنتين فلهما الثلثان مما ترك", ""], ["ع", "تكون عصبة بالغير مع الأخ الشقيق للذكر مثل حظ الأنثيين.", "وإن كانوا إخوة رجالاً ونساء فللذكر مثل حظ الأنثيين   )", ""], ["ع", "تكون عصبة مع الغير مع الفرع الوارث المؤنث فتصبح بقوة الأخ الشقيق وتأخذ الباقي بعد أصحاب الفروض.", "حديث ابن مسعود وقضاءه في مسألة ( بنت وبنت ابن وأخت )وعليه قال الفقهاء (اجعلوا الأخوات مع البنات عصبات )", ""], ["م", "تحجب بالفرع الوارث المذكر \"الابن وابن الابن مهما نزل\".", "لقوله تعالى: ( يستفتونك قل الله يفتيكم في الكلالة <span class=\"bk\"></span> ) الكلالة هو الميت الذي لم يخلف والداً ولا ولد فوجود الوالد (الأب) يحجب الأخت (من أدلى إلى الميت بواسطة حجبته تلك الواسطة إن وجدت) وكذلك الفرع الوارث المذكر يحجبها أما الفرع الوارث المؤنث فلا يحجبها كما أفتى أبو حنيفة بحجبها بالجدّ الصحيح خلاف للجمهور الذين يورثونها معه", "h"], ["م", "تحجب بالأب اتفاقا وبالجد عند الأحناف.", "لقوله تعالى: ( يستفتونك قل الله يفتيكم في الكلالة <span class=\"bk\"></span> ) الكلالة هو الميت الذي لم يخلف والداً ولا ولد فوجود الوالد (الأب) يحجب الأخت (من أدلى إلى الميت بواسطة حجبته تلك الواسطة إن وجدت) وكذلك الفرع الوارث المذكر يحجبها أما الفرع الوارث المؤنث فلا يحجبها كما أفتى أبو حنيفة بحجبها بالجدّ الصحيح خلاف للجمهور الذين يورثونها معه", "h"]]}, {"n": "الأخت لأب", "e": "👱‍♀️", "s": "لها عشر حالات ترث في 5 وتحجب في 5", "c": [["1/2", "إذا كانت واحدة وغير محجوبة ولا معصبة ولا مستحقة لفرض السدس.", "لقوله تعالى: ( يستفتونك قل الله يفتيكم في الكلالة إن امرؤ هلك ليس له ولد وله أخت فلها نصف ما ترك وهو يرثها إن لم يكن لها ولد فإن كانتا اثنتين فلهما الثلثان مما ترك", ""], ["2/3", "إذا كن أكثر من واحدة وغير محجوبات ولا معصبات ولا مستحقات لفرض السدس.", "لقوله تعالى: ( يستفتونك قل الله يفتيكم في الكلالة إن امرؤ هلك ليس له ولد وله أخت فلها نصف ما ترك وهو يرثها إن لم يكن لها ولد فإن كانتا اثنتين فلهما الثلثان مما ترك", ""], ["1/6", "مع الأخت الشقيقة المستحقة لفرض النصف تكملة للثلثين.", "قياساً على حالة بنت الابن مع البنت الصلبية", ""], ["ع", "تكون عصبة بالغير مع الأخ لأب للذكر مثل حظ الأنثيين.", "لقوله تعالى: وإن كانوا إخوة رجالاً ونساء فللذكر مثل حظ الأنثيين<br><span class=\"bk\"></span> )", ""], ["ع", "تكون عصبة مع الغير مع الفرع الوارث المؤنث فتكون بقوة الأخ لأب وتأخذ الباقي بعد أصحاب الفروض.", "(اجعلوا الأخوات مع البنات عصبات )", ""], ["م", "تحجب بالفرع الوارث المذكر الابن وابن الابن مهما نزل.", "لقوله تعالى: ( يستفتونك قل الله يفتيكم في الكلالة <span class=\"bk\"></span> ) الكلالة هو الميت الذي لم يخلف والداً ولا ولد فوجود الوالد (الأب) يحجب الأخت (من أدلى إلى الميت بواسطة حجبته تلك الواسطة إن وجدت) وكذلك الفرع الوارث المذكر يحجبها أما الفرع الوارث المؤنث فلا يحجبها لحديث ابن مسعود الوارد أعلاه ... كما أفتى أبو حنيفة بحجبها بالجدّ الصحيح خلاف الجمهور الذين يورثونها معه", "h"], ["م", "تحجب بالأب اتفاقا وبالجد عند الأحناف.", "لقوله تعالى: ( يستفتونك قل الله يفتيكم في الكلالة <span class=\"bk\"></span> ) الكلالة هو الميت الذي لم يخلف والداً ولا ولد فوجود الوالد (الأب) يحجب الأخت (من أدلى إلى الميت بواسطة حجبته تلك الواسطة إن وجدت) وكذلك الفرع الوارث المذكر يحجبها أما الفرع الوارث المؤنث فلا يحجبها لحديث ابن مسعود الوارد أعلاه ... كما أفتى أبو حنيفة بحجبها بالجدّ الصحيح خلاف الجمهور الذين يورثونها معه", "h"], ["م", "تحجب بالأخ الشقيق.", "بقوة القرابة فالأخ الشقيق يحجب الأخ لأب فمن باب أولى أن يحجب الأخت لأب", "h"], ["م", "تحجب بالأخت الشقيقة المعصبة مع الغير مع الفرع الوارث المؤنث لأنها تكون بقوة الأخ الشقيق.", "لأن الأخت الشقيقة أصبحت بقوة الأخ الشقيق فتحجب من يحجبه", "h"], ["م", "تحجب بالأختين الشقيقتين فأكثر المستحقات لفرض الثلثين ما لم يكن معها أخ لأب يعصبها.", "لاستغراق فرض الثلثين لقوله صلى الله عليه وسلم ( لا يزيد حق البنات على الثلثين)", "h"]]}]};
-var app=document.getElementById("app"),H=[];
+var app=document.getElementById("app"),H=[],UID=0;
+// ===== أيقونات الورثة (SVG) =====
+var IC={"الأب":{g:"m",h:"k",hc:"#fbf7ea",sk:"#e9bf98",cl:"#3f8a77",bd:"#6b5443",bg:"#e3f0ea"},
+"الجد الصحيح":{g:"m",h:"t",hc:"#ffffff",sk:"#edcaa6",cl:"#5f87a0",bd:"#f1f1ee",old:1,bg:"#e6eff4"},
+"الزوج":{g:"m",h:"g",hc:"#f8f4e8",sk:"#dfb086",cl:"#8a8f6c",bd:"#54423a",bg:"#f5eed9"},
+"الإخوة والأخوات لأم":{two:1,bg:"#eae6f3"},
+"الأم":{g:"f",hc:"#6fa89d",sk:"#efc7a4",cl:"#6fa89d",bg:"#e3f0ea"},
+"الجدة الصحيحة":{g:"f",hc:"#d8d6d0",sk:"#efcfae",cl:"#d8d6d0",old:1,bg:"#eef0f2"},
+"الزوجة":{g:"f",hc:"#e5b4af",sk:"#efc7a4",cl:"#e5b4af",pin:1,bg:"#fbeceb"},
+"البنت الصلبية":{g:"f",hc:"#86bccf",sk:"#f2cfae",cl:"#86bccf",kid:1,bg:"#e3f1f6"},
+"بنت الابن":{g:"f",hc:"#bfaed8",sk:"#f2cfae",cl:"#bfaed8",kid:1,fl:1,bg:"#efeaf6"},
+"الأخت الشقيقة":{g:"f",hc:"#94c5a1",sk:"#efc7a4",cl:"#94c5a1",bg:"#e7f3ea"},
+"الأخت لأب":{g:"f",hc:"#e4cd8c",sk:"#efc7a4",cl:"#e4cd8c",bg:"#f8f1da"}};
+function bust(o){var s="",sk=o.sk,f=o.g=="f",brw=o.old?"#9a9a9a":"#4a3a30";
+if(f)s+='<path d="M60 26C34 28 33 62 35 80C36 92 46 100 60 100C74 100 84 92 85 80C87 62 86 28 60 26Z" fill="'+o.hc+'"/>';
+s+='<path d="M24 120C24 96 40 90 60 90C80 90 96 96 96 120Z" fill="'+o.cl+'"/>';
+if(f)s+='<path d="M34 96C44 106 76 106 86 96L90 120H30Z" fill="'+o.hc+'" opacity=".9"/>';
+s+='<rect x="53" y="78" width="14" height="14" rx="5" fill="'+sk+'"/><ellipse cx="60" cy="62" rx="15" ry="18" fill="'+sk+'"/>';
+if(f)s+='<path d="M43 58C44 40 76 40 77 58C73 48 47 48 43 58Z" fill="'+o.hc+'"/>';
+if(o.g=="m"){s+='<path d="'+(o.old?'M44 62Q43 98 60 101Q77 98 76 62Q70 82 60 83Q50 82 44 62Z':'M46 66Q47 82 60 84Q73 82 74 66Q70 76 60 77Q50 76 46 66Z')+'" fill="'+o.bd+'" opacity="'+(o.old?1:.62)+'"/><path d="M53 70Q60 67 67 70Q60 72 53 70Z" fill="'+o.bd+'"/>';}
+s+='<circle cx="54" cy="60" r="1.8" fill="#3a2a22"/><circle cx="66" cy="60" r="1.8" fill="#3a2a22"/><path d="M49 55Q54 52.500 58 55M62 55Q66 52.500 71 55" stroke="'+brw+'" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M60 61Q57.500 67 61 68" stroke="#b07a58" stroke-width="1.2" fill="none" opacity=".7"/>';
+if(o.g=="m"&&!o.old)s+='<path d="M55 74Q60 76.500 65 74" stroke="#f7e9e0" stroke-width="1.3" fill="none" stroke-linecap="round"/>';
+else s+='<path d="M54 72Q60 76.500 66 72" stroke="#9c5547" stroke-width="1.6" fill="none" stroke-linecap="round"/>';
+if(o.old&&f)s+='<path d="M50 50Q60 47.500 70 50M47 64Q46 68 48 72M73 64Q74 68 72 72" stroke="#c9a98c" stroke-width="1" fill="none"/>';
+if(o.h=="k")s+='<path d="M44 51Q44 31 60 31Q76 31 76 51Q60 44 44 51Z" fill="'+o.hc+'" stroke="#d9c07a" stroke-width="1.4"/><path d="M47 45Q60 39 73 45" stroke="#d9c07a" fill="none"/>';
+if(o.h=="t")s+='<ellipse cx="60" cy="40" rx="23" ry="15" fill="'+o.hc+'" stroke="#e3dccb"/><path d="M40 42Q60 28 80 42M43 49Q60 36 77 49M50 28Q60 40 70 28" stroke="#d8cfb4" fill="none"/>';
+if(o.h=="g")s+='<path d="M36 55Q35 28 60 27Q85 28 84 55L85 74Q80 58 71 53Q60 48 49 53Q40 58 35 74Z" fill="'+o.hc+'" stroke="#e1d9c2"/><path d="M41 40Q60 30 79 40" stroke="#4a4038" stroke-width="3" fill="none"/>';
+if(o.pin)s+='<circle cx="60" cy="95" r="3.200" fill="#b8923a"/>';
+if(o.fl)s+='<g fill="#f4d98a"><circle cx="78" cy="42" r="3.500"/><circle cx="83" cy="46" r="3.500"/><circle cx="76" cy="47" r="3.500"/></g><circle cx="79.500" cy="45" r="2" fill="#c9954a"/>';
+return s}
+function ico(n){var o=IC[n]||IC["الأب"],id="c"+(++UID),g;
+if(o.two)g='<g transform="translate(-8 35) scale(.7)">'+bust({g:"m",h:"k",hc:"#fbf7ea",sk:"#e9bf98",cl:"#7b8fb5",bd:"#6b5443"})+'</g><g transform="translate(44 35) scale(.7)">'+bust({g:"f",hc:"#bfaed8",sk:"#efc7a4",cl:"#bfaed8"})+'</g>';
+else g=o.kid?'<g transform="translate(6 12) scale(.9)">'+bust(o)+'</g>':bust(o);
+return '<svg viewBox="0 0 120 120" aria-hidden="true"><defs><clipPath id="'+id+'"><path d="M8 120V56A52 52 0 0 1 112 56V120Z"/></clipPath></defs><path d="M8 120V56A52 52 0 0 1 112 56V120Z" fill="'+o.bg+'"/><g clip-path="url(#'+id+')">'+g+'</g><path d="M8 120V56A52 52 0 0 1 112 56V120" fill="none" stroke="#b8923a" stroke-width="3"/><path d="M14 120V56A46 46 0 0 1 106 56V120" fill="none" stroke="#e6d6a4" stroke-width="1"/><g transform="translate(60 13)" fill="#b8923a"><rect x="-5" y="-5" width="10" height="10"/><rect x="-5" y="-5" width="10" height="10" transform="rotate(45)"/></g></svg>'}
+// ===== الشاشات =====
 function F(f){var m=f.match(/^(\d)\/(\d)(.*)$/);if(!m)return '<span class="ft">'+f+'</span>';var x=m[3].trim();return '<span class="fw"><span class="fr"><b>'+m[1]+'</b><b>'+m[2]+'</b></span>'+(x?'<span class="fs">'+x+'</span>':'')+'</span>'}
+function K(c){return c[3]=='h'?'kh':(c[0]=='ع'?'ka':'kf')}
 function go(fn){H.push(fn);fn()}
 function back(){H.pop();(H[H.length-1]||home)()}
 function bk(){return H.length?'<button class="back" onclick="back()">› رجوع</button>':''}
-function home(){H=[];app.innerHTML='<h1>أصحاب الفروض من الرجال و النساء</h1><button class="big" onclick="go(function(){lst(\'m\')})">👨 أصحاب الفروض من الرجال</button><button class="big" onclick="go(function(){lst(\'w\')})">👩 أصحاب الفروض من النساء</button>'}
-function lst(g){var h=bk()+'<h2>'+(g=='m'?'أصحاب الفروض من الرجال':'أصحاب الفروض من النساء')+'</h2><div class="grid">';
-G[g].forEach(function(x,i){h+='<button class="ic" onclick="go(function(){hr(\''+g+'\','+i+')})"><span class="e">'+x.e+'</span><span class="t">'+x.n+'</span></button>'});
+function home(){H=[];app.innerHTML='<div class="bsm">بسم الله الرحمن الرحيم</div><h1>أصحاب الفروض من الرجال و النساء</h1><div class="orn">✦</div><button class="big" onclick="go(function(){lst(\'m\')})">'+ico("الأب")+'<span>أصحاب الفروض من الرجال</span></button><button class="big" onclick="go(function(){lst(\'w\')})">'+ico("الأم")+'<span>أصحاب الفروض من النساء</span></button>'}
+function lst(g){var h=bk()+'<h2>'+(g=='m'?'أصحاب الفروض من الرجال':'أصحاب الفروض من النساء')+'</h2><div class="orn">✦</div><div class="grid">';
+G[g].forEach(function(x,i){h+='<button class="ic" onclick="go(function(){hr(\''+g+'\','+i+')})">'+ico(x.n)+'<span class="t">'+x.n+'</span></button>'});
 app.innerHTML=h+'</div>'}
-function hd(x){return '<div class="ph">'+x.e+'</div><div class="nm">'+x.n+'</div>'}
-function hr(g,i){var x=G[g][i],h=bk()+hd(x)+'<div class="sb">'+x.s+'</div><div class="cnt">عدد الحالات '+x.c.length+'</div><div class="nums">';
-x.c.forEach(function(c,j){h+='<button class="num" onclick="go(function(){cs(\''+g+'\','+i+','+j+')})">'+(j+1)+'</button>'});
-app.innerHTML=h+'</div>'}
-function cs(g,i,j,sh){var x=G[g][i],c=x.c[j],hj=c[3]=='h',lb=hj?'الحجب':(c[4]||c[0]);
-var h=bk()+hd(x)+'<div class="num big1">'+(j+1)+'</div><div class="row"><div class="num">'+(j+1)+'</div><div class="f">'+(hj?'<span class="ft">'+c[0]+'</span>':F(c[0]))+'</div><div class="w">'+c[1]+'</div></div>';
+function hd(x){return '<div class="ph">'+ico(x.n)+'</div><div class="nm">'+x.n+'</div>'}
+function hr(g,i){var x=G[g][i],ks={},h=bk()+hd(x)+'<div class="sb">'+x.s+'</div><div class="cnt">عدد الحالات '+x.c.length+'</div><div class="nums">';
+x.c.forEach(function(c,j){var k=K(c);ks[k]=1;h+='<button class="num '+k+'" onclick="go(function(){cs(\''+g+'\','+i+','+j+')})">'+(j+1)+'</button>'});
+h+='</div><div class="lg">'+(ks.kf?'<span>فرض</span>':'')+(ks.ka?'<span class="ka">عصبة</span>':'')+(ks.kh?'<span class="kh">حجب</span>':'')+'</div>';
+app.innerHTML=h}
+function cs(g,i,j,sh){var x=G[g][i],c=x.c[j],hj=c[3]=='h',lb=hj?'الحجب':(c[4]||c[0]),k=K(c);
+var h=bk()+hd(x)+'<div class="num big1 '+k+'">'+(j+1)+'</div><div class="row '+k+'"><div class="num">'+(j+1)+'</div><div class="f">'+F(c[0])+'</div><div class="w">'+c[1]+'</div></div>';
 h+='<button class="dq" onclick="cs(\''+g+'\','+i+','+j+',1)">هل ترغب في دليل '+lb+' ؟</button>';
 if(sh)h+='<div class="dl"><div class="l">دليل '+lb+'</div><div class="a">'+c[2]+'</div></div>';
 var n=x.c.length;h+='<div class="nv">'+(j>0?'<button onclick="H[H.length-1]=function(){cs(\''+g+'\','+i+','+(j-1)+')};H[H.length-1]()">› الحالة '+j+'</button>':'')+(j<n-1?'<button onclick="H[H.length-1]=function(){cs(\''+g+'\','+i+','+(j+1)+')};H[H.length-1]()">الحالة '+(j+2)+' ‹</button>':'')+'</div>';
 app.innerHTML=h;window.scrollTo(0,0)}
 home();
-
 </script>
 </body>
 </html>
